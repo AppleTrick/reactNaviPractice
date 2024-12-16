@@ -1,13 +1,17 @@
 import { Button } from '@react-navigation/elements';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Text, View } from 'react-native';
-import { RootParamList } from '../navigation/StackNavigator';
+import { HomeScreenRouteProp, NavigationProp } from '../types/navigation/navigation';
+import { useEffect } from 'react';
 
-type NavigationProp = NativeStackNavigationProp<RootParamList>;
-
-function HomeScreen() {
+function HomeScreen({ route }: { route: HomeScreenRouteProp }) {
   const navigation = useNavigation<NavigationProp>();
+
+  useEffect(() => {
+    if (route.params?.post) {
+      alert('새로운 포스팅: ' + route.params?.post);
+    }
+  }, [route.params?.post]);
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -22,6 +26,8 @@ function HomeScreen() {
       >
         Go to Details
       </Button>
+      <Button onPress={() => navigation.navigate('CreatePost')}>Create post</Button>
+      <Text style={{ margin: 10 }}>Post: {route.params?.post}</Text>
     </View>
   );
 }

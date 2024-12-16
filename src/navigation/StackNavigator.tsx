@@ -2,12 +2,7 @@ import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-na
 import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
 import CreatePostScreen from '../screens/CreatePostScreen';
-
-export type RootParamList = {
-  Home?: { post: string };
-  Details?: { itemId: number; otherParam?: string; description?: string };
-  CreatePost: undefined;
-};
+import { RootParamList } from '../types/navigation/navigation';
 
 const Stack = createNativeStackNavigator<RootParamList>();
 

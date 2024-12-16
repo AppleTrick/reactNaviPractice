@@ -1,11 +1,7 @@
 import { RouteProp, useNavigation } from '@react-navigation/native';
-import { RootParamList } from '../navigation/StackNavigator';
 import { Text, View } from 'react-native';
 import { Button } from '@react-navigation/elements';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
-type DetailScreenRouteProp = RouteProp<RootParamList, 'Details'>;
-type NavigationProp = NativeStackNavigationProp<RootParamList>;
+import { DetailScreenRouteProp, NavigationProp } from '../types/navigation/navigation';
 
 function DetailScreen({ route }: { route: DetailScreenRouteProp }) {
   const navigation = useNavigation<NavigationProp>();
