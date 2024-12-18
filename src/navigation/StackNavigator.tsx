@@ -6,6 +6,7 @@ import { RootParamList } from '../types/navigation/navigation';
 import ProfileScreen from '../screens/ProfileScreen';
 import LogoTitleSample from '../screens/LogoTitleSampleScreen';
 import LogoTitle from '../components/LogoTitle';
+import BottomTabs from './BottomNavigator';
 
 const Stack = createNativeStackNavigator<RootParamList>();
 
@@ -36,6 +37,7 @@ function RootStack() {
           },
         }}
       />
+      <Stack.Screen name="BottomTab" component={BottomTabs} options={{ headerShown: false }} />
       <Stack.Screen
         name="Details"
         component={DetailScreen}
@@ -66,6 +68,9 @@ function RootStack() {
         component={LogoTitleSample}
         options={{
           headerTitle: (props) => <LogoTitle {...props} />,
+          headerBackTitle: 'Custom Back',
+          headerTintColor: '#8f3131',
+          // headerRight: () => <Button color="#ffffff" title="info" onPress={() => alert('This is a button!')} />,
         }}
       />
     </Stack.Navigator>

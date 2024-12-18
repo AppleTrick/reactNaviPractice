@@ -8,6 +8,7 @@ export type RootParamList = {
   CreatePost: undefined;
   Profile?: { name: string };
   LogoTitleSample: undefined;
+  BottomTab: undefined;
 };
 
 // useNavigation 에 사용하는 타입
