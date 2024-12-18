@@ -7,10 +7,13 @@ import ProfileScreen from '../screens/ProfileScreen';
 import LogoTitleSample from '../screens/LogoTitleSampleScreen';
 import LogoTitle from '../components/LogoTitle';
 import BottomTabs from './BottomNavigator';
+import { useState } from 'react';
 
 const Stack = createNativeStackNavigator<RootParamList>();
 
 function RootStack() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Stack.Navigator
       screenOptions={{
