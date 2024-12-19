@@ -10,6 +10,8 @@ const SignInScreen = ({ navigation, login }: SignInScreenProps) => (
     <Text style={styles.title}>Sign In Screen</Text>
     <Button title="Sign Up" onPress={() => navigation.navigate('SignUp')} />
     <Button title="Log In" onPress={login} />
+    <Button title="Help" onPress={() => navigation.navigate('Help')} />
+    <Button title="Invite" onPress={() => navigation.navigate('Invite')} />
   </View>
 );
 
