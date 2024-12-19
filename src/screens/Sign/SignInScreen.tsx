@@ -1,10 +1,15 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-const SignInScreen = ({ navigation }: { navigation: any }) => (
+type SignInScreenProps = {
+  login: () => void;
+  navigation: any;
+};
+
+const SignInScreen = ({ navigation, login }: SignInScreenProps) => (
   <View style={styles.container}>
     <Text style={styles.title}>Sign In Screen</Text>
     <Button title="Sign Up" onPress={() => navigation.navigate('SignUp')} />
-    <Button title="Log In" onPress={() => setIsLoggedIn(true)} />
+    <Button title="Log In" onPress={login} />
   </View>
 );
 

@@ -4,7 +4,7 @@ import { Image, Text, View } from 'react-native';
 import { HomeScreenRouteProp, NavigationProp } from '../types/navigation/navigation';
 import { useEffect } from 'react';
 
-function HomeScreen({ route }: { route: HomeScreenRouteProp }) {
+function HomeScreen({ route, logout }: { route: HomeScreenRouteProp; logout: () => void }) {
   const navigation = useNavigation<NavigationProp>();
 
   useEffect(() => {
@@ -41,6 +41,7 @@ function HomeScreen({ route }: { route: HomeScreenRouteProp }) {
       <Button onPress={() => navigation.navigate('LogoTitleSample')}>로고타이틀 스크린으로가기</Button>
       <Image style={{ width: 50, height: 50 }} source={require('../../assets/logo.png')} />
       <Button onPress={() => navigation.navigate('BottomTab')}>BottomTabPage로 가기</Button>
+      <Button onPress={logout}> LogOut</Button>
     </View>
   );
 }
